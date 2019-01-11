@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Action cards</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style type="text/css">
+		@font-face {/*Font used for <h1> and <h2>: band's name*/
+		font-family: "GUNPLAY";
+		src: url("gunplay.ttf");
+		}
+		body {
+			background-color: rgb(180, 101, 6);
+		}
+		p {	
+			margin-top: 10px;
+			background-color: #537b5c;
+			color: white;
+			border-radius: 5px;
+		}
+		button {
+			font-family: "GUNPLAY", Arial, sans-serif;
+			margin-top: 10px;
+
+		}
+		h1,h2 {
+			color: white;
+			font-family: "GUNPLAY", Arial, sans-serif;
+
+		}
+	</style>
+	<script>
+		const items = ["Advance<br> Play when you [any Soldier] are paying an Entrance Cost. Add 3 to your [any Soldier] Movement value.","Draw Fire<br> Play before rolling for a Hostile's Attack. Redirect the Attack to another Soldier in the same Location.", "Camouflage<br> Covert 1<br> Play when you [any Soldier] declare an Attack. Treat a Screened target as being Unscreened for the Attack.", "Cautious<br> Covert 1<br> Play after you [any Soldier] roll for a Hostile card's Attack. Cancel the Attack.", "Combined Fire<br> All Soldiers Add 1[2] to their Ranged Attack rolls this Soldier Turn.", "Silver Bullet<br> Play when you declare a Bolt or Semi Attack at Range 0. Automatically get an Attack roll 10 and Defeat cover roll 6.", "Extra Magazine<br> Add 1 Ammo counter to one of your [any Soldier] non-Expended Weapons that has 0 or 1 Ammo counter remaining.", "Flanking Attack<br> Covert 2<br> You [any Soldier] may perform a Move and then you may immediately perform an Attack without spending Actions.", "Clear Orders<br> Support 1<br> Add 1 to the Hand Size of all Player Soldiers until the end of the Soldier's Turn. Retain: 2XP", "Hand Signals<br> Covert 2<br> All Soldiers can freely exchange Action cards. A Soldier cannot end up with more Action cards than he started with.", "Ready<br> Pay 2XP to play this card. You [any Soldier] may perform a Discard and Draw Action without spending an Action.", "Kick In The Door<br> Play when you [any Soldier] are paying a Structure Location's Entrance cost. Ignore the Entrance cost penalties on Hostile cards.", "Infiltrate<br> Play when you [any Soldier] are paying a Nature Location's Entrance cost. Ignore the Entrance cost penalties on Hostile cards.", "Mortar Support<br> Support 4<br> Once each Soldier Turn, Attack a Hostile card. No XP. Retain: 4XP.", "Move Out You [any Soldier] may perform a Move without spending an Action.", "Trail Blazing<br> Play when you [any Soldier] are the first Soldier to enter a Location. After you discard to Enter, permanently reduce its Entrance cost by 2[4].", "Overwatch<br> Support 2<br> Play at the start of the Hostile Attack step. You [any Soldier] may perform 1 Attack at the start of the Hostile Attack step. Does not cost an Action. Retain: 1XP.", "Prepared Fire<br> Play when you [any Soldier] declare an Attack. Treat your Defeat Cover roll as being a 6.", "Reloading<br> You [any Soldier] may perform a Reload without spending an Action.", "Walk It Off<br> You [and Soldier] may Heal 1 or discard a Suppress counter.", "Snap Shot<br> You [any Soldier] may perform an Attack without spending an Action.", "Sniper Support<br> Support 2<br> Once each Soldier Turn, Attack a Hostile card with a value of 0 or 1 and inflict 1 Hit. No XP. Retain: 2XP.", "Scrounge<br> Support 2<br> Pay 2XP to play this card. Purchase and distribute a total of 3 Resource points of Gear to any Soldiers in your Location.", "Cover Me<br> Support 2<br> Non-Player Soldiers and Squad Soldiers may perform 1 Attack each Soldier Turn without spending an Action. Retain: 4XP.", "Go! Go! Go!<br> Support 1<br> Each Non-Player Soldier and Squad Soldier may perform a Move without spending an Action. Retain: 3XP", "Stay Low<br> Covert 2<br> Permanently treat your Location as having a None Reinforcement.", "Steady Aim<br> Play when you declare a Ranged Attack. Add 2[4] to your Attack Rolls.", "Self-Sacrifice<br> Play when a Soldier is suffering Wounds. Instead, inflict the Wounds on another Soldier in that Location.", "Suppress<br> Play after you [any Soldier] rolls for a Hostile card's Attack. Discard 1 Ammo from a Weapon or 1 Expendable that can Attack the Hostile. Cancel the Attack.", "Take Cover<br> Pay 1XP to play this card. Play after you [any Soldier] rolls for a Hostile card's Attack. Cancel the Attack.", "FUBAR<br> Play when a Hostile card is placed in, or Moves into, your Location. Gain 1 extra Action during the next Soldier Turn.", "Location", "Location", "Location", "Rally!<br> Remove up to a total of 3 Suppress counters from any Soldiers.", "Attack!<br> Play when you inflict a Hit at Range 0. Inflict another Hit on the same Hostile.", "Decisive<br> Pay 2 XP to play this card. You [any Soldier] may perform an Attack, Move, or Reload without spending an Action.", "Brotherhood<br> Play when every Soldier inflicts a Hit during the Soldier Turn. Keep this card until used. When used, each Soldier gains 1 extra Action.", "Lucky Shot<br> Pay 2 XP to play this card. Play this card after you [any Soldier] have rolled for an Attack. Add 1 to the Attack and Defeat cover rolls.", "Blindspot<br> Play when you declare a Ranged or Thrown Attack against a Vehicle. Add 1[2] to your Attack and Defeat Cover rolls.", "Blast<br> Play when you declare an Explosion Attack. Roll 2 extra Attack Rolls."];
+		function draw1(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card1").innerHTML = item;
+		}
+
+		function discard1(){
+			document.getElementById("card1").innerHTML = "empty";
+		}
+		function draw2(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card2").innerHTML = item;
+		}
+
+		function discard2(){
+			document.getElementById("card2").innerHTML = "empty";
+		}
+		function draw3(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card3").innerHTML = item;
+		}
+
+		function discard3(){
+			document.getElementById("card3").innerHTML = "empty";
+		}
+		function draw4(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card4").innerHTML = item;
+		}
+
+		function discard4(){
+			document.getElementById("card4").innerHTML = "empty";
+		}
+		function draw5(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card5").innerHTML = item;
+		}
+
+		function discard5(){
+			document.getElementById("card5").innerHTML = "empty";
+		}
+		function draw6(){
+			var item = items[Math.floor(Math.random()*items.length)];
+			document.getElementById("card6").innerHTML = item;
+		}
+
+		function discard6(){
+			document.getElementById("card6").innerHTML = "empty";
+		}
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1>WARFIGHTER</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1>Action Cards</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2 text-center">
+				<h2>Card #1</h2>
+			</div>
+			<div class="col-2 text-center">
+				<h2>Card #2</h2>
+			</div>
+			<div class="col-2 text-center">
+				<h2>Card #3</h2>
+			</div>
+			<div class="col-2 text-center">
+				<h2>Card #4</h2>
+			</div>
+			<div class="col-2 text-center">
+				<h2>Card #5</h2>
+			</div>
+			<div class="col-2 text-center">
+				<h2>Card #6</h2>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw1()">DRAW</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw2()">DRAW</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw3()">DRAW</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw4()">DRAW</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw5()">DRAW</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="draw6()">DRAW</button>
+			</div>
+
+		</div>
+		<div class="row text-center">
+			<div class="col-2">
+				<button type="button" class="btn btn-primary" onclick="discard1()">DISCARD</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary"  onclick="discard2()">DISCARD</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary"  onclick="discard3()">DISCARD</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary"  onclick="discard4()">DISCARD</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary"  onclick="discard5()">DISCARD</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-primary"  onclick="discard6()">DISCARD</button>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-2 text-center">
+				<p id="card1">empty</p>
+			</div>
+			<div class="col-2 text-center">
+				<p id="card2">empty</p>
+			</div>
+			<div class="col-2 text-center">
+				<p id="card3">empty</p>
+			</div>
+			<div class="col-2 text-center">
+				<p id="card4">empty</p>
+			</div>
+			<div class="col-2 text-center">
+				<p id="card5">empty</p>
+			</div>
+			<div class="col-2 text-center">
+				<p id="card6">empty</p>
+			</div>
+		</div>
+		
+
+	</div>
+
+</body>
+</html>
