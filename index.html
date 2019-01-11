@@ -12,12 +12,14 @@
 			background-color: rgb(180, 101, 6);
 		}
 		p {	
+			border-color: black;
 			margin-top: 10px;
 			background-color: #537b5c;
 			color: white;
 			border-radius: 5px;
 		}
 		button {
+			margin-bottom: 10px;
 			font-family: "GUNPLAY", Arial, sans-serif;
 			margin-top: 10px;
 
@@ -78,6 +80,14 @@
 		function discard6(){
 			document.getElementById("card6").innerHTML = "empty";
 		}
+		function discard_all() {
+			document.getElementById("card1").innerHTML = "empty";
+			document.getElementById("card2").innerHTML = "empty";
+			document.getElementById("card3").innerHTML = "empty";
+			document.getElementById("card4").innerHTML = "empty";
+			document.getElementById("card5").innerHTML = "empty";
+			document.getElementById("card6").innerHTML = "empty";
+		}
 	</script>
 </head>
 <body>
@@ -91,6 +101,12 @@
 			<div class="col-12 text-center">
 				<h1>Action Cards</h1>
 			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-12">
+				<button type="button" class="btn btn-primary" onclick="discard_all()">DISCARD ALL</button>
+			</div>
+
 		</div>
 		<div class="row">
 			<div class="col-2 text-center">
